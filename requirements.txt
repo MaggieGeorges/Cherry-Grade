@@ -3,3 +3,5 @@ ultralytics==8.0.216
 numpy
 opencv-python
 Pillow
+
+gunicorn == 22.0.0
