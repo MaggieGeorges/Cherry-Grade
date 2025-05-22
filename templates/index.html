@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YOLOv8 Coffee Cherry Detector</title>
+</head>
+<body>
+  <h1>Upload Coffee Cherry Image</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <label for="image">Select an image to upload:</label>
+    <input type="file" id="image" name="image" required title="Upload a coffee cherry image" placeholder="Choose image file">
+    <input type="submit" value="Detect">
+  </form>
+
+  {% if result_image %}
+    <h2>Result:</h2>
+    <img src="{{ url_for('static', filename=result_image.split('static/')[-1]) }}" width="600" alt="Detected coffee cherry result">
+  {% endif %}
+</body>
+</html>

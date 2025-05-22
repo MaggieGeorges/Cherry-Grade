@@ -1,0 +1,9 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 5
+names: ['dry', 'overripe', 'ripe', 'semi_ripe', 'unripe']
+
+
+
