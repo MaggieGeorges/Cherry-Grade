@@ -31,7 +31,12 @@ def index():
             result_path = os.path.join(RESULT_FOLDER, f"{uuid.uuid4()}.jpg")
             cv2.imwrite(result_path, annotated)
 
-            return render_template("index.html", result_image=result_path)
+            upload_web_path = os.path.relpath(img_path, "static").replace("\\", "/")
+            result_web_path = os.path.relpath(result_path, "static").replace("\\", "/")
+
+            return render_template("index.html", upload_image=upload_web_path, result_image=result_web_path)
+        
+        
     return render_template("index.html")
 
 if __name__ == "__main__":
